@@ -6,11 +6,6 @@ pipeline {
         DOCKERHUB_USERNAME = 'kimberlyops'
         IMAGE_NAME = 'customer-management'
         IMAGE_TAG = "${BUILD_NUMBER}"
-        JAVA_HOME = tool 'JDK17'
-    }
-
-    tools {
-        gradle 'Gradle-9'
     }
 
     stages {
@@ -113,7 +108,6 @@ pipeline {
         }
         always {
             echo '🏁 Pipeline finished.'
-            cleanWs()
         }
     }
 }
