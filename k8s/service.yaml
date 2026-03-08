@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer-management-service
+  namespace: customer-management
+  labels:
+    app: customer-management
+spec:
+  selector:
+    app: customer-management
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+      nodePort: 30080
+  type: NodePort
